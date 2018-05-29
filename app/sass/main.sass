@@ -1,0 +1,213 @@
+@import "vars"
+@import "fonts"
+@import "libs"
+@import "smart-grid"
+@import "../css/FontinSansCR/stylesheet.css"
+
+body
+	//font-family: "Fontin Sans CR"
+	+reset()
+	h1,.h1,h2,.h2,h3,.h3
+		//margin: $gutter - 20px
+	h1,.h1
+		font-size: 3rem
+	h2,.h2
+		font-size: 2.5rem
+		font-weight: 600
+		letter-spacing: normal
+		margin-bottom: $gutter - 10px
+	h3,.h3
+		font-size: 1.8rem
+	p
+		font-size: 1.4rem
+header
+	margin-bottom: 10px
+	nav
+		+wrapper()
+		+row-flex()
+		+size(10)
+		justify-content: center
+		+shift-left(1)
+		margin-bottom: $gutter + 10px
+		margin-top: $gutter - 10px
+		li
+			list-style: none
+			margin: 10px 19px
+			a
+				color: black
+				font-size: 28px
+	.logo
+		width: 100%
+		text-align: center
+		top: 35%
+		position: absolute
+		margin: 0 auto
+		img
+			+size(4)
+
+main
+	+wrapper()
+	text-align: center
+	margin-top: $gutter - 10px
+	.accommodation
+		+wrapper()
+		+size(7)
+
+		p
+			text-align: justify
+			margin-bottom: $gutter + 15px
+			line-height: 1.3
+		.bgimg
+			position: absolute
+			width: 100%
+			background-image: url(../img/1.jpg)
+			left: 0
+			height: 400px
+			padding-top: $gutter
+			color: white
+			font-weight: bold
+
+		h3
+			font-size: 3rem
+			margin-bottom: $gutter - 10px
+		.conditions
+			+row-flex()
+			margin: 0 auto
+			justify-content: center
+
+			.conditions-item
+
+				text-align: center
+				justify-content: center
+				+size(4)
+				.info
+					+col-ib
+
+
+					background-color: white
+					color: #000
+					padding: 3.3px 30px
+					border-top-right-radius: 10px
+					border-bottom-right-radius: 10px
+					p
+						font-size: 20px
+						font-weight: lighter
+						span
+							font-size: 2.4rem
+							font-weight: bold
+				.appart
+					background: url(../img/appartaments.png) no-repeat
+					-webkit-background-size: 32.8%
+					background-size: 32.8%
+					height: 270px
+					position: relative
+					margin-top: -106px
+				.cottage
+					background: url(../img/cottage.png) no-repeat
+					-webkit-background-size: 48.8%
+					background-size: 48.8%
+					height: 270px
+					position: relative
+					margin-top: -106px
+				.bungalo
+					background: url(../img/bungalo.png) no-repeat
+					-webkit-background-size: 35%
+					background-size: 35%
+					height: 270px
+					position: relative
+					margin-top: -106px
+				h3
+					margin-top: -60px
+					display: block
+					position: absolute
+					font-size: 2rem
+	.accommodation-type
+		margin-top: 410px
+		h2
+			font-size: 2.6rem
+			text-transform: uppercase
+		.accommodation-items
+
+			.accommodation-item
+				text-align: center
+				margin-bottom: $gutter + 40px
+				h3
+					margin-top: 40px
+				p
+					+wrapper()
+					+size(7)
+					text-align: justify
+
+	.infos
+		.info-bg
+			background: url(../img/info-bg.jpg) no-repeat
+			margin: 0 -30px
+			text-align: center
+			padding: 165px 0
+			padding-bottom: 280px
+			h2
+				color: white
+				font-weight: 500
+				text-transform: uppercase
+			p
+				+size(6)
+				+shift-left(3)
+				text-align: justify
+				font-size: 1.3rem
+				color: white
+				font-weight: 300
+	.cafe
+		margin-top: $gutter
+		p
+			+size(8)
+			+shift-left(2)
+			text-align: justify
+			margin-bottom: $gutter
+		&-items
+		&-item
+			+row-flex()
+			justify-content: center
+			padding: $gutter 0
+			background-color: #d9dc38
+			margin: 0 -30px
+			.info
+				+size(8)
+
+				h3
+					span
+						text-transform: uppercase
+
+
+#bold-line
+	border: 3px solid black
+#regular-line
+	border: 1px solid black
+.slick
+	margin: 10px -30px
+	padding: 25px 0
+	padding-bottom: 1px
+	.cottage-slick
+		+size(12)
+		margin: 0 auto
+		text-align: center
+		margin-bottom: 30px
+
+		img
+			height: 230px
+			margin: 0 10px
+.clc
+	display: block
+	width: 100%
+	margin-top: -40px
+	.calc
+		padding: 10px 30px
+		display: inline-block
+		background-color: #076225
+		color: white
+		font-size: 30px
+		text-transform: uppercase
+		font-weight: lighter
+		span
+			margin-left: 10px
+
+@import "media" // Always at the end

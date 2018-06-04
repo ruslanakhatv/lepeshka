@@ -35,6 +35,13 @@ $(function() {
             // instead of a settings object
         ]
     });
-	// Custom JS
+    $('#menumobile').click(function () {
+        $('nav>ul').slideToggle()
+    });
+    //
+    // $("#gallery").unitegallery({
+    //     theme_navigation_type:"arrows"
+    // });
+
 
 });

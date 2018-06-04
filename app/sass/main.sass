@@ -3,10 +3,12 @@
 @import "libs"
 @import "smart-grid"
 @import "../css/FontinSansCR/stylesheet.css"
+@import "../scss/main"
 
 body
 	//font-family: "Fontin Sans CR"
 	+reset()
+
 	h1,.h1,h2,.h2,h3,.h3
 		//margin: $gutter - 20px
 	h1,.h1
@@ -16,113 +18,155 @@ body
 		font-weight: 600
 		letter-spacing: normal
 		margin-bottom: $gutter - 10px
+		+lg(font-size, 1.7rem)
 	h3,.h3
 		font-size: 1.8rem
 	p
 		font-size: 1.4rem
+		margin-bottom: $gutter
+
 header
 	margin-bottom: 10px
+	margin: 0 auto
 	nav
 		+wrapper()
 		+row-flex()
-		+size(10)
-		justify-content: center
+		+size(12)
+
 		+shift-left(1)
+		margin: 0 auto
 		margin-bottom: $gutter + 10px
+		+md(margin-bottom, 20px)
 		margin-top: $gutter - 10px
+		justify-content: center
+		+md(justify-content, flex-start)
+		ul
+			+md(display,none)
+			+md(margin-top,40px)
+			+md(position,absolute)
+			+row-flex()
+
+
+			justify-content: center
+
 		li
 			list-style: none
 			margin: 10px 19px
+			+lg(margin, 5px 10px)
+
 			a
 				color: black
 				font-size: 28px
+				+lg(font-size, 25px)
+				+md(color,white)
+		#menumobile
+			display: none
+			+md(display, block)
+		#slesh
+			+md(display,none)
+
 	.logo
 		width: 100%
 		text-align: center
 		top: 35%
+		+md(top,15%)
 		position: absolute
 		margin: 0 auto
 		img
 			+size(4)
+	.bacg-img
+		//+wrapper-full()
+		margin: 0 auto
+		//margin-right: -30px
+		img
+			width: 100%
 
 main
 	+wrapper()
 	text-align: center
 	margin-top: $gutter - 10px
 	.accommodation
-		+wrapper()
-		+size(7)
 
 		p
+			+size(7)
+			+size-md(10)
+			+size-sm(12)
+			margin: 0 auto
 			text-align: justify
 			margin-bottom: $gutter + 15px
 			line-height: 1.3
 		.bgimg
-			position: absolute
-			width: 100%
-			background-image: url(../img/1.jpg)
-			left: 0
-			height: 400px
-			padding-top: $gutter
+			background: url(../img/1.jpg) no-repeat
+			padding: $gutter
 			color: white
 			font-weight: bold
+			margin: 0 -30px
+			height: auto
+			-webkit-background-size: cover
+			background-size: cover
 
 		h3
-			font-size: 3rem
+			font-size: 1.8rem
 			margin-bottom: $gutter - 10px
-		.conditions
+			+md(font-size, 2.5rem)
+		ul
 			+row-flex()
-			margin: 0 auto
 			justify-content: center
+			+size(8)
+			margin: 0 auto
+			li
+				+size(6)
+				padding: $gutter - 15px
+				i
+					+size(12)
+					font-size: 30px
+					color: #076226
 
-			.conditions-item
+		&__items
+			+row-flex()
+			+size(7)
+			+size-lg(10)
+			+size-sm(12)
+			justify-content: center
+			margin: 0 auto
+		&__item
+			+size(4)
+			+size-sm(12)
+			&:nth-last-child(1)
+				margin-right: -50px
+				margin-right: 20px
+			.appart
+				width: 100%
+				background: url(../img/appartaments.png) no-repeat
+				-webkit-background-size: 100%
+				background-size: 100%
+				height: 270px
+			.cottage
+				background: url(../img/cottage.png) no-repeat
+				width: 100%
+				-webkit-background-size: 100%
+				background-size: 100%
+				height: 270px
+			.bungalo
+				background: url(../img/bungalo.png) no-repeat
+				+sm(background-size, 90%)
+				-webkit-background-size: 71%
+				background-size: 71%
+				height: 270px
+				width: 100%
 
-				text-align: center
-				justify-content: center
-				+size(4)
-				.info
-					+col-ib
-
-
-					background-color: white
-					color: #000
-					padding: 3.3px 30px
-					border-top-right-radius: 10px
-					border-bottom-right-radius: 10px
-					p
-						font-size: 20px
-						font-weight: lighter
-						span
-							font-size: 2.4rem
-							font-weight: bold
-				.appart
-					background: url(../img/appartaments.png) no-repeat
-					-webkit-background-size: 32.8%
-					background-size: 32.8%
-					height: 270px
-					position: relative
-					margin-top: -106px
-				.cottage
-					background: url(../img/cottage.png) no-repeat
-					-webkit-background-size: 48.8%
-					background-size: 48.8%
-					height: 270px
-					position: relative
-					margin-top: -106px
-				.bungalo
-					background: url(../img/bungalo.png) no-repeat
-					-webkit-background-size: 35%
-					background-size: 35%
-					height: 270px
-					position: relative
-					margin-top: -106px
-				h3
-					margin-top: -60px
-					display: block
-					position: absolute
-					font-size: 2rem
 	.accommodation-type
-		margin-top: 410px
+		margin-top: $gutter
+		//margin: 0 -15px
+		.info
+			background-color: #d7e290
+			margin: 0 -30px
+
+			.slick
+				+size(8)
+				+size-md(10)
+				+size-sm(12)
+				margin: 0 auto
 		h2
 			font-size: 2.6rem
 			text-transform: uppercase
@@ -131,12 +175,16 @@ main
 			.accommodation-item
 				text-align: center
 				margin-bottom: $gutter + 40px
+
 				h3
 					margin-top: 40px
 				p
 					+wrapper()
 					+size(7)
+					+size-md(10)
+					+size-sm(12)
 					text-align: justify
+					margin-bottom: $gutter
 
 	.infos
 		.info-bg
@@ -145,13 +193,23 @@ main
 			text-align: center
 			padding: 165px 0
 			padding-bottom: 280px
+			-webkit-background-size: cover
+			background-size: cover
+			+sm(padding, 60px 0)
+
 			h2
 				color: white
 				font-weight: 500
 				text-transform: uppercase
+				+sm(font-size, 2.2rem)
 			p
 				+size(6)
+				+size-md(10)
+				//+size-sm(12)
 				+shift-left(3)
+				+shift-md-left(1)
+				//+shift-sm-left(0)
+
 				text-align: justify
 				font-size: 1.3rem
 				color: white
@@ -161,6 +219,8 @@ main
 		p
 			+size(8)
 			+shift-left(2)
+			+size-md(10)
+			+shift-md-left(1)
 			text-align: justify
 			margin-bottom: $gutter
 		&-items
@@ -172,11 +232,78 @@ main
 			margin: 0 -30px
 			.info
 				+size(8)
-
+				+size-sm(9)
 				h3
+					+sm(font-size, 1.3rem)
+
 					span
 						text-transform: uppercase
+	#contact
+		margin: 0 -30px
+		.contact
+			+size(8)
+			+size-md(10)
+			margin: 0 auto
+			&__info
+				+row-flex()
+				justify-content: center
+				.maps
+					+size(6)
+					+size-md(12)
+					margin-top: $gutter
+					margin-right: $gutter
+					+md(margin-right, - $gutter)
+					text-align: center
+				.call-back
+					+size(6)
+					+size-md(12)
 
+					margin-top: $gutter
+
+					.manager
+						+row-flex()
+						justify-content: flex-end
+						img
+							height: 100px
+							padding:  0 0 0 $gutter
+						&__info
+							text-align: right
+							//width: 300px
+						&__name
+							font-weight: bold
+							font-size: 1.4rem
+						&__position
+							font-size: 1.4rem
+						&__form
+							text-align: right
+							h3
+								margin-top: 20px
+								font-size: 1.6rem
+								+lg(letter-spacing, 0px)
+								letter-spacing: 7px
+							input,textarea
+								margin-top: 15px
+								width: 100%
+								background-color: #e3e3e3
+								border: 2px solid #7d7d7d
+								-webkit-border-radius: 5px
+								-moz-border-radius: 5px
+								border-radius: 5px
+								padding: 10px
+								font-size: 20px
+							button
+								background-color: #076226
+								color: white
+								padding: 7px 30px
+								-webkit-border-radius: 8px
+								-moz-border-radius: 8px
+								border-radius: 8px
+								font-size: 1.3rem
+
+footer
+	margin-top: $gutter
+	height: 150px
+	background-color: #707070
 
 #bold-line
 	border: 3px solid black
@@ -186,6 +313,7 @@ main
 	margin: 10px -30px
 	padding: 25px 0
 	padding-bottom: 1px
+
 	.cottage-slick
 		+size(12)
 		margin: 0 auto
@@ -198,7 +326,7 @@ main
 .clc
 	display: block
 	width: 100%
-	margin-top: -40px
+	margin-top: -20px
 	.calc
 		padding: 10px 30px
 		display: inline-block
@@ -209,5 +337,21 @@ main
 		font-weight: lighter
 		span
 			margin-left: 10px
+.slick-prev
+	left: -80px
+.slick-next
+	right: -80px
 
+.slick-next, .slick-prev
+	height: 60px
+	width: 60px
+	background-color: white
+	-webkit-border-radius: 100%
+	-moz-border-radius: 100%
+	border-radius: 100%
+
+.slick-next:before, .slick-prev:before
+	font-size: 70px
+	color: #8cb22d
+	margin-left: -5px
 @import "media" // Always at the end

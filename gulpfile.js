@@ -37,6 +37,7 @@ gulp.task('styles', function() {
 gulp.task('js', function() {
 	return gulp.src([
 		'app/libs/jquery/dist/jquery.min.js',
+		'app/libs/fancybox/dist/jquery.fancybox.js',
 		'app/js/common.js', // Always at the end
 		])
 	.pipe(concat('scripts.min.js'))
@@ -49,9 +50,9 @@ gulp.task('rsync', function() {
 	return gulp.src('app/**')
 	.pipe(rsync({
 		root: 'app/',
-		hostname: 'username@yousite.com',
-		destination: 'yousite/public_html/',
-		// include: ['*.htaccess'], // Includes files to deploy
+		hostname: 'p252776@p252776.ftp.ihc.ru',
+		destination: 'www/privolye.rusart-media.ru',
+		 // include: ['*.htaccess'], // Includes files to deploy
 		exclude: ['**/Thumbs.db', '**/*.DS_Store'], // Excludes files from deploy
 		recursive: true,
 		archive: true,

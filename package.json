@@ -22,6 +22,7 @@
     "gulp-util": "^3.0.8"
   },
   "dependencies": {
+    "animate": "^1.0.0",
     "smart-grid": "^2.0.1"
   }
 }

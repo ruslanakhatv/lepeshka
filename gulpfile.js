@@ -38,7 +38,8 @@ gulp.task('js', function() {
 	return gulp.src([
 		'app/libs/jquery/dist/jquery.min.js',
 		'app/libs/fancybox/dist/jquery.fancybox.js',
-		'app/js/common.js', // Always at the end
+		'app/libs/wow/dist/wow.js',
+		'app/js/common.js' // Always at the end
 		])
 	.pipe(concat('scripts.min.js'))
 	// .pipe(uglify()) // Mifify js (opt.)

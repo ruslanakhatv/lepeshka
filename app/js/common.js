@@ -42,6 +42,12 @@ $(function() {
     // $("#gallery").unitegallery({
     //     theme_navigation_type:"arrows"
     // });
-
+    $(".bacg-img").slick({
+        dots: false,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 1
+    })
+    new WOW().init();
 
 });

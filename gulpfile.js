@@ -39,6 +39,7 @@ gulp.task('js', function() {
 		'app/libs/jquery/dist/jquery.min.js',
 		'app/libs/fancybox/dist/jquery.fancybox.js',
 		'app/libs/wow/dist/wow.js',
+		'app/libs/flickity/flickity.pkgd.min.js',
 		'app/js/common.js' // Always at the end
 		])
 	.pipe(concat('scripts.min.js'))

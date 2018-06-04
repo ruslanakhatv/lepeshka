@@ -49,5 +49,10 @@ $(function() {
         slidesToShow: 1
     })*/
     new WOW().init();
-
+    $('.bacg-img').flickity({
+        // options
+        cellAlign: 'left',
+        adaptiveHeight: false,
+        contain: false
+    });
 });

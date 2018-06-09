@@ -49,36 +49,21 @@ $(function() {
         slidesToShow: 1
     })*/
     new WOW().init();
-    /*var $carousel =  $('.bacg-img').flickity({
-        // options
-        on: {
-            change: function() {
-                //setTimeout('$(".bacg-img img").css("opacity","0")', 500);
-            }
-            },
-        cellAlign: 'left',
-        adaptiveHeight: false,
-        contain: false,
-        autoPlay: 3000,
-        pageDots: false,
-        prevNextButtons: false,
-        resize: true,
-        pauseAutoPlayOnHover: false
-        //wrapAround: true
-    });*/
-    var arr = ["1-1.jpg", "1-2.jpg", "1-3.jpg"];   // имена картинок
+    
+    var arr = ["header.jpg" ,"1-1.jpg", "1-2.jpg", "1-3.jpg"];   // имена картинок
     var path = "../img/"; // каталог, где лежат картинки.
     var i = 0; // индекс текущего изображения.
+
     function next() {
-
-        $(".bacg-img img").hide("slow");//css("opacity", "0.0");
-
-        $(".bacg-img img").attr("src", path + arr[i]);
-
+        
         i = ++i%arr.length;
-        $(".bacg-img img").show("slow");//css("opacity", "1.0");
-
+        $(".bacg-img img").fadeOut(500, function() {
+            $(".bacg-img img").attr("src", path + arr[i]);
+        });
+        
+        $(".bacg-img img").fadeIn(500);
+        
     }
 
-    setInterval(function(){next()},3000);
+    setInterval(function(){next()},5000);
 });

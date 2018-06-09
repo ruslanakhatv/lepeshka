@@ -21,6 +21,7 @@ body
 		letter-spacing: normal
 		margin-bottom: $gutter - 10px
 		+lg(font-size, 1.7rem)
+		+xs(font-size, 1.5rem)
 	h3,.h3
 		font-size: 1.8rem
 	p
@@ -31,6 +32,7 @@ header
 	margin-bottom: 10px
 	margin: 0 auto
 	nav
+		display: block
 		+wrapper()
 		+row-flex()
 		+size(12)
@@ -72,24 +74,29 @@ header
 		width: 100%
 		text-align: center
 		top: 35%
+		+lg(top, 20%)
 		+md(top,15%)
 		position: absolute
 		margin: 0 auto
 		z-index: 0
 		img
 			+size(4)
+			+size-lg(5)
 	.bacg-img
-		//+wrapper-full()
 		margin: 0 auto
-		//margin-right: -30px
 		img
 			width: 100%
 			height: 600px
+			+lg(height, 550px)
+			+md(height, 500px)
+			+sm(height, 400px)
+			+xs(height, 250px)
+
 			transition: 0.5s
 			background-position: center top
 			overflow: hidden
 main
-	+wrapper()
+	//+wrapper()
 	text-align: center
 	margin-top: $gutter - 10px
 	.accommodation
@@ -97,17 +104,16 @@ main
 		p
 			+size(7)
 			+size-md(10)
-			+size-sm(12)
+			+size-sm(11)
 			margin: 0 auto
 			text-align: justify
 			margin-bottom: $gutter + 15px
 			line-height: 1.3
 		.bgimg
 			background: url(../img/1.jpg) no-repeat
-			padding: $gutter
 			color: white
 			font-weight: bold
-			margin: 0 -30px
+			//margin: 0 -30px
 			height: auto
 			-webkit-background-size: cover
 			background-size: cover
@@ -135,40 +141,35 @@ main
 			+size(7)
 			+size-lg(10)
 			+size-sm(12)
-			justify-content: center
+			justify-content: space-between
 			margin: 0 auto
-		&__item
+	
+		.img
+			min-height: 270px
 			+size(4)
 			+size-sm(12)
-			&:nth-last-child(1)
-				margin-right: -50px
-				margin-right: 20px
-			.appart
-				width: 100%
-				background: url(../img/appartaments.png) no-repeat
-				-webkit-background-size: 100%
-				background-size: 100%
-				height: 270px
-			.cottage
-				background: url(../img/cottage.png) no-repeat
-				width: 100%
-				-webkit-background-size: 100%
-				background-size: 100%
-				height: 270px
-			.bungalo
-				background: url(../img/bungalo.png) no-repeat
-				+sm(background-size, 90%)
-				-webkit-background-size: 71%
-				background-size: 71%
-				height: 270px
-				width: 100%
+			+xs(margin-left, 20px)
+		.appart
+			background: url(../img/appartaments.png) no-repeat
+			background-size: 100%
 
+		.cottage
+			margin-left: 50px
+			background: url(../img/cottage.png) no-repeat
+			background-size: 100%
+			background-position: right top
+		.bungalo
+			background: url(../img/bungalo.png) no-repeat
+			+md(min-height, 430px)
+			+sm(background-size, 90%)
+			background-size: 71%
+			background-position: right top
 	.accommodation-type
 		margin-top: $gutter
 		//margin: 0 -15px
 		.info
 			//background-color: #d7e290
-			margin: 0 -30px
+			//margin: 0 -30px
 
 			.slick
 				+size(8)
@@ -183,10 +184,14 @@ main
 			background-color: #f9d159
 		h2
 			font-size: 2.6rem
+			+md(font-size, 2.2rem)
+			+xs(font-size, 1.9rem)
 			text-transform: uppercase
 		.accommodation-items
 
 			.accommodation-item
+				padding-right: 15px
+				padding-left: 15px
 				text-align: center
 				margin-bottom: $gutter + 40px
 
@@ -203,7 +208,7 @@ main
 	.infos
 		.info-bg
 			background: url(../img/info-bg.jpg) no-repeat
-			margin: 0 -30px
+			//margin: 0 -30px
 			text-align: center
 			padding: 165px 0
 			padding-bottom: 280px
@@ -231,19 +236,23 @@ main
 	.cafe
 		margin-top: $gutter
 		p
+			//padding-left: 15px
+			//padding-right: 15px
+			margin: auto
 			+size(8)
-			+shift-left(2)
 			+size-md(10)
-			+shift-md-left(1)
+			+size-xs(11)
 			text-align: justify
 			margin-bottom: $gutter
 		&-items
+			background-color: #e8d453
 		&-item
-			+row-flex()
+			display: flex
+			flex-wrap: wrap
 			justify-content: center
 			padding: $gutter 0
-			background-color: #c6d177
-			margin: 0 -30px
+			//background-color: #55d173
+			//margin: 0 -30px
 			.info
 				+size(8)
 				+size-sm(9)
@@ -252,12 +261,16 @@ main
 
 					span
 						text-transform: uppercase
+	.besedka2
+		background-color: #55d173
 	#contact
-		margin: 0 -30px
+		//margin: 0 -30px
 		.contact
 			+size(8)
 			+size-md(10)
 			margin: 0 auto
+			p
+				text-align: justify
 			&__info
 				+row-flex()
 				justify-content: center

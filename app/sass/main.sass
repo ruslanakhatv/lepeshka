@@ -45,11 +45,14 @@ header
 		justify-content: center
 		+md(justify-content, flex-start)
 		ul
+			//border: 1px solid black
+			//background-color: black
 			+md(display,none)
 			+md(margin-top,40px)
 			+md(position,absolute)
+			+md(background-color, black)
 			+row-flex()
-
+			z-index: 1			
 
 			justify-content: center
 
@@ -84,6 +87,7 @@ header
 			+size-lg(5)
 	.bacg-img
 		margin: 0 auto
+		z-index: 0
 		img
 			width: 100%
 			height: 600px

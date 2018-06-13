@@ -1,21 +1,18 @@
 $columns: 12
 $atom: (100% / $columns)
 
-$break_xl: 1600px
 $break_lg: 1440px
 $break_md: 1280px
 $break_sm: 780px
 $break_xs: 560px
 
 $offset: 30px
-$offset_xl: $offset
 $offset_lg: $offset
 $offset_md: $offset
 $offset_sm: $offset
 $offset_xs: $offset
 
 $offset_one_side: ($offset / 2)
-$offset_xl_one_side: ($offset_xl / 2)
 $offset_lg_one_side: ($offset_lg / 2)
 $offset_md_one_side: ($offset_md / 2)
 $offset_sm_one_side: ($offset_sm / 2)
@@ -41,7 +38,7 @@ $fields_sm: 15px
     #{$type}-right: $offset_one_side
 
 =wrapper()
-    max-width: 1200px
+    max-width: 1920px
     margin: 0 auto
     +wrapper-full()
 
@@ -76,10 +73,6 @@ $fields_sm: 15px
 =size($n)
     $val: 100% / $columns * $n
     width: #{calc(#{$val} - #{$offset})}
-
-=size-xl($n)
-    $val: 100% / $columns * $n
-    +xl(width, #{calc(#{$val} - #{$offset_xl})})
 
 =size-lg($n)
     $val: 100% / $columns * $n
@@ -122,32 +115,6 @@ $fields_sm: 15px
 =shift-padding-right($n)
     $val: 100% / $columns * $n
     padding-right: #{calc(#{$val} + #{$offset_one_side})}
-
-=shift-xl($n)
-    $val: 100% / $columns * $n
-    +xl(margin-left, #{calc(#{$val} + #{$offset_xl_one_side})})
-    +xl(margin-right, #{calc(#{$val} + #{$offset_xl_one_side})})
-
-=shift-xl-left($n)
-    $val: 100% / $columns * $n
-    +xl(margin-left, #{calc(#{$val} + #{$offset_xl_one_side})})
-
-=shift-xl-right($n)
-    $val: 100% / $columns * $n
-    +xl(margin-right, #{calc(#{$val} + #{$offset_xl_one_side})})
-
-=shift-xl-padding($n)
-    $val: 100% / $columns * $n
-    +xl(padding-left, #{calc(#{$val} + #{$offset_xl_one_side})})
-    +xl(padding-right, #{calc(#{$val} + #{$offset_xl_one_side})})
-
-=shift-xl-padding-left($n)
-    $val: 100% / $columns * $n
-    +xl(padding-left, #{calc(#{$val} + #{$offset_xl_one_side})})
-
-=shift-xl-padding-right($n)
-    $val: 100% / $columns * $n
-    +xl(padding-right, #{calc(#{$val} + #{$offset_xl_one_side})})
 
 =shift-lg($n)
     $val: 100% / $columns * $n
@@ -252,14 +219,6 @@ $fields_sm: 15px
 =shift-xs-padding-right($n)
     $val: 100% / $columns * $n
     +xs(padding-right, #{calc(#{$val} + #{$offset_xs_one_side})})
-
-=xl($name, $value)
-    @media screen and (max-width: $break_xl)
-        #{$name}: $value
-
-=xl-block()
-    @media screen and (max-width: $break_xl)
-        @content
 
 =lg($name, $value)
     @media screen and (max-width: $break_lg)
